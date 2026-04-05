@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oliver Revenue — PI Firm Pitch Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #00092E;
+    --slate-blue: #3B6FC2;
+    --warm-gray: #F7F6F3;
+    --medium-gray: #6B7280;
+    --light-border: #E5E4E1;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f0f0f0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: letter portrait; margin: 0; }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ═══ HEADER ═══ */
+  .header {
+    background: var(--navy);
+    padding: 40px 40px 48px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--slate-blue), rgba(59,111,194,0.5), transparent);
+  }
+  .header .glow {
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    opacity: 0.06;
+    background: radial-gradient(circle, var(--slate-blue) 0%, transparent 65%);
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    position: relative; z-index: 1;
+  }
+  .wordmark-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--slate-blue);
+  }
+  .wordmark-text {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    color: #fff;
+    font-size: 34px;
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.4);
+    font-size: 12.5px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    position: relative; z-index: 1;
+  }
+
+  /* ═══ MAIN ═══ */
+  .main {
+    flex: 1;
+    padding: 32px 40px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-label {
+    color: var(--slate-blue);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--light-border);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    color: var(--navy);
+    font-size: 21px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+  }
+
+  section { margin-bottom: 28px; }
+
+  /* Pain points */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .pain-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .pain-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(59,111,194,0.6);
+  }
+  .pain-label span {
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .pain-text {
+    color: var(--medium-gray);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  /* Outcomes */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+  }
+  .outcome {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .outcome-bar {
+    width: 2.5px;
+    border-radius: 2px;
+    background: rgba(59,111,194,0.2);
+    margin-top: 2px;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+  .outcome h4 {
+    color: var(--navy);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 2px;
+  }
+  .outcome p {
+    color: var(--medium-gray);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    gap: 24px;
+  }
+  .step { flex: 1; }
+  .step-divider {
+    width: 1px;
+    background: var(--light-border);
+    flex-shrink: 0;
+  }
+  .step-number {
+    font-family: var(--font-display);
+    color: rgba(59,111,194,0.25);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .step h4 {
+    color: var(--navy);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .step p {
+    color: var(--medium-gray);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  /* Credibility strip */
+  .cred-strip {
+    background: var(--warm-gray);
+    border-radius: 4px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+  .cred-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0,9,46,0.1);
+    flex-shrink: 0;
+  }
+  .cred-text {
+    color: rgba(0,9,46,0.6);
+    font-size: 10.5px;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 175px;
+    padding: 0 8px;
+  }
+
+  /* ═══ FOOTER ═══ */
+  .footer {
+    background: var(--navy);
+    padding: 20px 40px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(59,111,194,0.4), rgba(59,111,194,0.15), transparent);
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-cta {
+    font-family: var(--font-display);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    margin-bottom: 2px;
+  }
+  .footer-sub {
+    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .footer-contact {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 32px;
+  }
+  .footer-email {
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+  .footer-phone {
+    color: rgba(255,255,255,0.5);
+    font-size: 12.5px;
+  }
+  .footer-url {
+    color: rgba(255,255,255,0.25);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  /* Mobile scaling */
+  @media (max-width: 816px) {
+    .page {
+      width: 100%;
+      min-height: auto;
+    }
+    .header { padding: 28px 24px 32px; }
+    .hero-title { font-size: 26px; }
+    .main { padding: 24px 24px 20px; }
+    .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+    .outcome-grid { grid-template-columns: 1fr; gap: 12px; }
+    .steps { flex-direction: column; gap: 16px; }
+    .step-divider { width: 100%; height: 1px; }
+    .cred-strip { flex-direction: column; gap: 12px; padding: 16px; }
+    .cred-divider { width: 60px; height: 1px; }
+    .cred-text { max-width: none; }
+    .footer { padding: 20px 24px; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 16px; }
+    .footer-contact { text-align: center; margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="glow"></div>
+
+    <div class="wordmark">
+      <div class="wordmark-dot"></div>
+      <span class="wordmark-text">Oliver Revenue</span>
+    </div>
+
+    <h1 class="hero-title">
+      Increase Signed Cases<br>
+      <em>Without Increasing Ad Spend</em>
+    </h1>
+
+    <p class="hero-sub">Conversion Infrastructure for Personal Injury Firms</p>
+  </header>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main">
+
+    <!-- THE PROBLEM -->
+    <section>
+      <div class="section-header">
+        <span class="section-label">The Problem</span>
+        <div class="section-line"></div>
+      </div>
+      <h2 class="section-title">You're Paying for Leads. How Many Are You Losing?</h2>
+
+      <div class="pain-grid">
+        <div>
+          <div class="pain-label">
+            <div class="pain-dot"></div>
+            <span>Slow First Response</span>
+          </div>
+          <p class="pain-text">The average PI firm takes 45+ minutes to respond to a new lead. By then, the prospect has already called your competitor.</p>
+        </div>
+        <div>
+          <div class="pain-label">
+            <div class="pain-dot"></div>
+            <span>After-Hours Gaps</span>
+          </div>
+          <p class="pain-text">60% of PI leads come in after 5pm. If nobody's responding, you're paying for leads your competition signs.</p>
+        </div>
+        <div>
+          <div class="pain-label">
+            <div class="pain-dot"></div>
+            <span>Follow-Up Failure</span>
+          </div>
+          <p class="pain-text">Most firms follow up once or twice, then move on. The case that would have signed on attempt #5 never gets a third call.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT CHANGES -->
+    <section>
+      <div class="section-header">
+        <span class="section-label">The Outcome</span>
+        <div class="section-line"></div>
+      </div>
+      <h2 class="section-title">What Your Firm Looks Like in 90 Days</h2>
+
+      <div class="outcome-grid">
+        <div class="outcome">
+          <div class="outcome-bar"></div>
+          <div>
+            <h4>Every lead gets a response in under 60 seconds</h4>
+            <p>Day, night, weekend, holiday. No lead sits untouched.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-bar"></div>
+          <div>
+            <h4>Persistent, structured follow-up runs on its own</h4>
+            <p>Your intake team focuses on conversations, not chasing callbacks.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-bar"></div>
+          <div>
+            <h4>Retainer packets get signed faster</h4>
+            <p>Reminders, nudges, and completion workflows keep deals from stalling.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-bar"></div>
+          <div>
+            <h4>You see exactly where leads convert or die</h4>
+            <p>A clear view of your pipeline, response times, and conversion rate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section>
+      <div class="section-header">
+        <span class="section-label">The Process</span>
+        <div class="section-line"></div>
+      </div>
+      <h2 class="section-title">Three Steps. 90 Days.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h4>We audit your intake pipeline</h4>
+          <p>Find where leads leak and quantify the opportunity.</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h4>We install conversion infrastructure</h4>
+          <p>Speed systems, follow-up sequences, retainer acceleration, and visibility dashboards.</p>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h4>We measure the lift</h4>
+          <p>Weekly optimization and a 90-day conversion report proving the ROI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <div class="cred-strip">
+      <p class="cred-text">Built for Texas PI firms with 3–20 attorneys and active marketing spend</p>
+      <div class="cred-divider"></div>
+      <p class="cred-text">Founding Partner pilot: 90 days</p>
+      <div class="cred-divider"></div>
+      <p class="cred-text">No ad management. No CRM replacement. Pure conversion infrastructure.</p>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-cta">Start with a 15-minute diagnostic call</p>
+        <p class="footer-sub">No commitment. We review your intake metrics and model the potential impact.</p>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-email">vincent@oliverrevenue.com</p>
+        <p class="footer-phone">(713) 555-0100</p>
+        <p class="footer-url">oliverrevenue.com</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
