@@ -25,14 +25,40 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #f0f0f0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  @page { size: letter portrait; margin: 0; }
+  @page {
+    size: letter portrait;
+    margin: 0 !important;
+  }
+
+  @media print {
+    html, body {
+      width: 8.5in;
+      height: 11in;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .page {
+      width: 8.5in !important;
+      height: 11in !important;
+      min-height: 11in !important;
+      max-height: 11in !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+  }
 
   .page {
     width: 8.5in;
+    height: 11in;
     min-height: 11in;
     max-width: 100%;
     margin: 0 auto;
