@@ -36,8 +36,6 @@
 
   @media print {
     html, body {
-      width: 8.5in;
-      height: 11in;
       margin: 0 !important;
       padding: 0 !important;
       background: #fff !important;
@@ -45,12 +43,14 @@
       print-color-adjust: exact !important;
     }
     .page {
-      width: 8.5in !important;
-      height: 11in !important;
-      min-height: 11in !important;
-      max-height: 11in !important;
+      width: 100% !important;
+      height: 100vh !important;
+      min-height: 0 !important;
+      max-height: 100vh !important;
       margin: 0 !important;
       box-shadow: none !important;
+      transform: scale(0.92);
+      transform-origin: top left;
       page-break-after: avoid;
       page-break-inside: avoid;
     }
